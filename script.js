@@ -17,7 +17,7 @@ for (let i = 1; i < 20; i++) {
         'stroke-width': '1',
         x: position,
         y: position,
-        fill: 'transparent'
+        fill: 'hsl(0, 0%, 13%)'
     })
 
     let rotateRight = document.createElementNS('http://www.w3.org/2000/svg', 'animateTransform')
@@ -40,3 +40,11 @@ for (let i = 1; i < 20; i++) {
 }
 
 svg.append(rectGroup)
+
+svg.addEventListener('mouseover', () => {
+    svg.pauseAnimations()
+})
+
+svg.addEventListener('mouseleave', () => {
+    svg.unpauseAnimations()
+})
